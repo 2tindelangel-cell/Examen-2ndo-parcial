@@ -8,6 +8,9 @@
         body{
             background-color: rgba(20, 245, 110, 0.845);
         }
+        h1 b{
+            text-shadow: -3px 4px 4px blue;
+        }
     </style>
 </head>
 <body>
@@ -17,7 +20,7 @@
     <label for="Minutos">
         Minutos de llamada a celular: (1.00 c/u)
     </label>
-    <input type="text">
+    <input type="number">
     <br>
     <h2><b>Tipo de plan</b></h2>
     <input type="radio">
@@ -52,15 +55,15 @@
     </label>
     <br>
     <h4><b>Paquetes</b></h4>
-    <label for=""></label>
-    <select id="Paquetes" name="Paquetes">
-    <option value="1">Residencial +0%</option>
-    </form>
+    <label for="Paquetes"></label>
+    <select name="Paquetes" id="Paquetes">
+    <option value="1">Seleccionar una opción</option>
+    <option value="2">Residencial +0%</option>
+    <option value="3">Ejecutivo</option>
+    <option value="4">Familiar</option>
+    </select>
     <br>
-    <label for="Calcular Recibo">
-        Calcular Recibo
-    </label>
-     <input type="submit">
+     <input type="submit" value="Calcular Recibo" style="margin-bottom: 8px;">
     
 
 
