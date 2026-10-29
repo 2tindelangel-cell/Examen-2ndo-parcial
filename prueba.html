@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Recibo telefonico!</title>
+</head>
+<body>
+    
+</body>
+<style>
+       *{
+            background-color: rgba(32, 237, 148, 0.941);
+
+        }
+
+        body {   
+            margin: 0;
+        }
+
+        div{
+            margin-bottom: 10px;
+        }
+
+        form{
+            border: 5px solid black;
+            width: 500px;
+        }
+ 
+        h1{
+            margin: 0;
+            text-shadow: 3px 4px 4px blue;
+        }
+        select{
+            background-color: rgb(255, 254, 254);
+        }
+
+
+    </style>
+    <script>
+        alert('Saludos a mi hermoso mundo que me vio nacer');
+    </script>
+</head>
+<body>
+
+    <h1>Recibo Telefonico</h1>
+    
+    <form action="">
+
+        <div>
+
+            <div id="seccion-minutos">
+                <label for="minutos">
+                    Minutos de llamadas a celular: (1.00 c/u)
+                </label>
+                <input type="number" name="minutos" id="minutos">
+            </div>
+
+            <hr>
+
+            <div id="seccion-plan">
+                <label for=""><b>Tipo de plan</b></label>
+                <br>
+                <input type="radio" name="plan" id="plan" value="tel">
+                    <span>Solo telefono (200.00)</span>
+                <br>
+                <input type="radio" name="plan" id="plan" value="internet">
+                    <span>Telefono e Internet (450.00)</span>
+                <br>
+                <input type="radio" name="plan" id="plan" value="tv">
+                    <span>Telefono e Internet e TV (850.00)</span>
+                <br>
+                <input type="radio" name="plan" id="plan" value="tv&internet">
+                    <span>Internet e TV (1050.00)</span>
+            </div>
+
+            <hr>
+            <div id="seccion-otros">
+                <label for=""><b>Otros Servicios</b></label>
+                <br>
+                <input type="checkbox" name="" id=""><span>Antivirus (30.00)</span>
+                <br>
+                <input type="checkbox" name="" id=""><span>Servicios de la nube (50.00)</span>
+                <br>
+                <input type="checkbox" name="" id=""><span>Servicios web (40.00)</span>
+            </div>
+
+            <hr>
+            <div id="seccion-paquetes">
+                <label for=""><b>Paquetes</b></label>
+                <br>
+                <select name="" id="">
+                    <option value="">-Selecciona una opción-</option>
+                    <option value="">Residencial +0%</option>
+                    <option value="">Básico +10%</option>
+                    <option value="">Negocios +20%</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <div id="seccion-total">
+                <label for="">Total a pagar:</label>
+                <input type="text" name="" id="" readonly>
+            </div>
+
+            <button type="submit" onclick="alert('Esto esta pagado')">Calcular</button>
+
+        </div>
+
+    </form>
+    
+    <script>
+        console.log('Hola, desde la consola del desarrollador');
+
+        var minutos = document.getElementById("minutos");
+
+        console.log(minutos);
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

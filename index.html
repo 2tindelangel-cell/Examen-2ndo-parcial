@@ -24,7 +24,8 @@
     <label for="Minutos">
         Minutos de llamada a celular: (1.00 c/u)
     </label>
-    <input type="number">
+    <input type="number" id="Minutos">
+
     <hr>
     <br>
     <h2><b>Tipo de plan</b></h2>
@@ -70,14 +71,23 @@
     <option value="4">Familiar</option>
     </select>
     <br>
-     <input type="submit" value="Calcular Recibo" style="margin-bottom: 8px;">
+
+    <button type="submit" onclick="alert('Esto esta pagado')">Calcular</button>
     
 
 <script>
 console.log('Hola desde la consola');
-    
+
+function calcularTotal() {
+    event.preventDefault();
+    let Minutos = document.getElementById("Minutos") ;
+    console.log(Minutos);
+
+    alert('haz click en el boton Calcular');
+}
 </script>
-<script src="Java.js"></script>
+
+<script src="Calculadora.js"></script>
 
 </body>
 </html>

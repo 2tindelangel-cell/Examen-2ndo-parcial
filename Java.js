@@ -13,7 +13,7 @@ var edad= 17;
 var estatura= 1.70;
 
 /*La VARIABLE mayoriaDeEdad guarda el valor boolean*/
-var mayoriaDeEdad = true;
+var mayoriaDeEdad;
 
 console.log(nombre)
 console.log(edad)
@@ -23,3 +23,17 @@ console.log(mayoriaDeEdad)
 alert(nombre);
 nombre= prompt("Escribe el nombre nuevo");
 alert("Mi nombre es: " +nombre + ". Y mi edad es de: " + edad);
+
+edad = prompt('Escribe una edad:');
+
+if (edad >= 18) {
+    mayoriaDeEdad= true;
+    alert('Tú eres mayor de edad')
+}
+if ( nombre == "Pedro") {
+    alert('Hola al compa' + nombre)
+}
+estatura = prompt('Escribe tu estatura:')
+if (estatura <= 1.50) {
+    alert('Eres un niño')   
+}
