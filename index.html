@@ -21,7 +21,7 @@
     <hr>
     
     <form id="formRecibo">
-        <!-- Minutos -->
+      
         <label for="Minutos">
             Minutos de llamada a celular: ($1.00 c/u)
         </label>
@@ -89,6 +89,10 @@
             if (document.getElementById("telefonoInternetTv").checked) {
                 total = total + 850;
             }
+
+            console.log("Minutos ingresados:", minutos);
+            console.log("Plan seleccionado:", planElegido);
+            console.log("Subtotal hasta aquí:", total);
 
            
             if (document.getElementById("Antivirus").checked) {
