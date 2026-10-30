@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recibo telefonico</title>
+    <title>Recibo Telefónico</title>
     <style>
-        body{
+        body {
             background-color: rgba(20, 245, 110, 0.845);
         }
-        h1 b{
+        h1 b {
             text-shadow: -3px 4px 4px blue;
         }
     </style>
@@ -17,77 +17,97 @@
     </script>
 </head>
 <body>
-    <h1><b>Recibo telefonico</b></h1>
-    <br>
+    <h1><b>Recibo Telefónico</b></h1>
     <hr>
-    <form action="" method="get">
-    <label for="Minutos">
-        Minutos de llamada a celular: (1.00 c/u)
-    </label>
-    <input type="number" id="Minutos">
-
-    <hr>
-    <br>
-    <h2><b>Tipo de plan</b></h2>
-    <input type="radio">
-    <label for="solo telefonico">
-            Solo telefono (200.00)
-    </label>
-    <br>
-    <input type="radio">
-    <label for="telefono+Internet">
-        Telefono+Internet (450.00)
-    </label>
-    <br>
-    <input type="radio">
-    <label for="Telefono+Internet+Tv">
-        Telefono+Internet+TV (850.00)
-    </label>
-    <br>
-    <hr>
-    <h3><b>Otros Servicios</b></h3>
-    <input type="checkbox">
-    <label for="Antivirus">
-        Antivirus (30.00)
-    </label>
-    <br>
-    <input type="checkbox">
-    <label for="Servicios de nube">
-        Servicios de nube (50.00)
-    </label>
-    <br>
-    <input type="checkbox">
-    <label for="Servicios web">
-        Servicios web (40.00)
-    </label>
-    <br>
-    <hr>
-    <h4><b>Paquetes</b></h4>
-    <label for="Paquetes"></label>
-    <select name="Paquetes" id="Paquetes">
-    <option value="1">Seleccionar una opción</option>
-    <option value="2">Residencial +0%</option>
-    <option value="3">Ejecutivo</option>
-    <option value="4">Familiar</option>
-    </select>
-    <br>
-
-    <button type="submit" onclick="alert('Esto esta pagado')">Calcular</button>
     
+    <form id="formRecibo">
+        <!-- Minutos -->
+        <label for="Minutos">
+            Minutos de llamada a celular: ($1.00 c/u)
+        </label>
+        <input type="number" id="Minutos" value="0" min="0">
 
-<script>
-console.log('Hola desde la consola');
+        <hr>
+        <h2><b>Tipo de plan</b></h2>
+        <input type="radio" id="solotelefonico" name="tipoPlan" value="200" checked>
+        <label for="solotelefonico">Solo teléfono ($200.00)</label>
+        <br>
+        
+        <input type="radio" id="telefonoInternet" name="tipoPlan" value="450">
+        <label for="telefonoInternet">Teléfono + Internet ($450.00)</label>
+        <br>
+        
+        <input type="radio" id="telefonoInternetTv" name="tipoPlan" value="850">
+        <label for="telefonoInternetTv">Teléfono + Internet + TV ($850.00)</label>
+        <br>
 
-function calcularTotal() {
-    event.preventDefault();
-    let Minutos = document.getElementById("Minutos") ;
-    console.log(Minutos);
+        <hr>
+        <h3><b>Otros Servicios</b></h3>
+        <input type="checkbox" id="Antivirus" value="30">
+        <label for="Antivirus">Antivirus ($30.00)</label>
+        <br>
+        
+        <input type="checkbox" id="Nube" value="50">
+        <label for="Nube">Servicios de nube ($50.00)</label>
+        <br>
+        
+        <input type="checkbox" id="Web" value="40">
+        <label for="Web">Servicios web ($40.00)</label>
+        <br>
 
-    alert('haz click en el boton Calcular');
-}
-</script>
+        <hr>
+        <h4><b>Paquetes</b></h4>
+        <label for="Paquetes"></label>
+        <select id="Paquetes">
+            <option value="0">-Seleccionar una opción-</option>
+            <option value="50">Residencial ($50.00)</option>
+            <option value="100">Ejecutivo ($100.00)</option>
+            <option value="75">Familiar ($75.00)</option>
+        </select>
+        <br><br>
 
-<script src="Calculadora.js"></script>
+        <button type="button" onclick="calcularTotal()">Calcular</button>
+    </form>
 
+    <script>
+        console.log('Hola desde la consola');
+
+   function calcularTotal() {
+            let total = 0;
+
+            
+            let minutos = parseInt(document.getElementById("Minutos").value);
+            total = total + (minutos * 1);
+
+            
+            if (document.getElementById("solotelefonico").checked) {
+                total = total + 200;
+            }
+            if (document.getElementById("telefonoInternet").checked) {
+                total = total + 450;
+            }
+            if (document.getElementById("telefonoInternetTv").checked) {
+                total = total + 850;
+            }
+
+           
+            if (document.getElementById("Antivirus").checked) {
+                total = total + 30;
+            }
+            if (document.getElementById("Nube").checked) {
+                total = total + 50;
+            }
+            if (document.getElementById("Web").checked) {
+                total = total + 40;
+            }
+
+            
+            let combo = document.getElementById("Paquetes").value;
+            total = total + parseInt(combo);
+
+            
+            alert("Tu deuda a pagar es: " + total);
+        }
+    </script>
 </body>
 </html>
